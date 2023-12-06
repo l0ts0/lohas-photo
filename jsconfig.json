@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@vw/*":[
+                "src/views/*"
+            ],
+            "@cp/*":[
+                "src/components/*"
+            ],
+            "@st/*":[
+                "src/stores/*"
+            ],
+            "@pic/*":[
+                "src/assets/resource/*"
+            ],
+            "@/*":[
+                "src/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "public"
+    ]
+}

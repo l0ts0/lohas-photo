@@ -1,0 +1,31 @@
+{
+  "name": "lohas-photo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@vue/runtime-dom": "^3.3.4",
+    "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
+    "cascade-gallery": "^1.2.3",
+    "dayjs": "^1.11.7",
+    "exif-js": "^2.3.0",
+    "pinia": "^2.0.35",
+    "qrcode": "^1.5.3",
+    "vue": "^3.2.47",
+    "vue-masonry": "^0.16.0",
+    "vue-router": "^4.1.6",
+    "vue-waterfall": "^1.0.6",
+    "vue3-carousel": "^0.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.1",
+    "sass": "^1.64.2",
+    "vite": "^4.3.4"
+  }
+}
