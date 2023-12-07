@@ -1,0 +1,48 @@
+$quote-padding-y: 1rem;
+$quote-padding-x: 1rem;
+$quote-margin-bottom: 1rem;
+$quote-border-radius: $border-radius;
+$quote-link-font-weight: $font-weight-bold;
+$quote-border-width: $border-width;
+$quote-color-scale: 40%;
+$quote-dismissible-padding-r: $quote-padding-x * 3;
+
+.quote {
+    --#{$prefix}quote-bg: white;
+    --#{$prefix}quote-padding-x: #{$quote-padding-x};
+    --#{$prefix}quote-padding-y: #{$quote-padding-y};
+    --#{$prefix}quote-margin-bottom: #{$quote-margin-bottom};
+    --#{$prefix}quote-color: inherit;
+    --#{$prefix}quote-border-color: #{$gray-300};
+    --#{$prefix}quote-border: #{$quote-border-width} solid var(--#{$prefix}quote-border-color);
+    --#{$prefix}quote-border-radius: #{$quote-border-radius};
+
+    position: relative;
+    padding: var(--#{$prefix}quote-padding-y) var(--#{$prefix}quote-padding-x);
+    margin-bottom: var(--#{$prefix}quote-margin-bottom);
+    color: #{$gray-600};
+    background-color: var(--#{$prefix}quote-bg);
+    border: var(--#{$prefix}quote-border);
+    @include border-radius(var(--#{$prefix}quote-border-radius));
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0.25rem;
+        background-color: var(--#{$prefix}quote-color);
+        border-top-left-radius: calc(#{$quote-border-radius} - #{$quote-border-width});
+        border-bottom-left-radius: calc(#{$quote-border-radius} - #{$quote-border-width});
+    }
+}
+
+@each $state,
+$value in $theme-colors {
+    $quote-color: shift-color($value, $quote-color-scale);
+
+    .quote-#{$state} {
+        --#{$prefix}quote-color: #{$value};
+    }
+}

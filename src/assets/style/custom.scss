@@ -1,0 +1,157 @@
+//element
+.title-smReg {
+    font-size: 1.4rem;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &.pink-yellow{
+        background-image: linear-gradient(to right, #f7487c 0%, #fee140 100%);
+    }
+    &.blue-green{
+        background-image: linear-gradient(to left, #17da6e 0%, #009efd 100%);
+        // background-image: linear-gradient(to right, #12cfad 0%, #9face6 100%);
+    }
+    @media (max-width:575px) {
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+    button{
+        color: gray;
+        @media (max-width:575px) {
+            font-size: 0.9rem;
+            padding: 2px 5px;
+        }
+    }
+    &.sm-text{
+        font-size: 1.125rem;
+    }
+
+
+}
+.area-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: var(--bs-main-color);
+
+    &::before {
+        content: "";
+        margin-right: 0.25rem;
+        background-color: var(--bs-main-color);
+        border-radius: 0.125rem;
+        width: 0.5rem;
+        height: 1.25rem;
+    }
+
+    &.orange {
+        color: var(--bs-deep-yellow);
+
+        &::before {
+            background-color: var(--bs-deep-yellow);
+        }
+    }
+
+    &.blue {
+        color: var(--bs-light-blue);
+
+        &::before {
+            background-color: var(--bs-light-blue);
+        }
+    }
+}
+.area{
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: var(--bs-border-radius) !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08) !important;
+    &.deep{
+        background-color: #e4e4e4;
+    }
+}
+.a-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &.j-center{
+        justify-content: center;
+    }
+}
+.ActName {
+    font-size: 1.625rem;
+    font-weight: bold;
+
+    @media (max-width:768px) {
+        font-size: 1.35rem;
+    }
+}
+.ActMemo{
+    color: var(--bs-gray);
+}
+// form
+.dataLabel {
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.1875rem;
+
+    @media (max-width:575px) {
+        font-size: 1rem;
+        text-align: left;
+    }
+}
+.item-text{
+    display: flex;
+    align-items: center;
+
+}
+.required::before {
+    content: '*';
+    color: red;
+}
+
+.info{
+    padding: 0.8rem;
+    border-radius: 0.25rem;
+    background-color: black;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.25rem;
+    &.red{
+        border-left: 0.3rem #ffbb00 solid;
+        color: red;
+    }
+    @media (max-width:575px) {
+        font-size: 1rem;
+    }
+}
+// 表格
+table {
+    --bs-table-bg: transparent !important;
+    --bs-table-color:none !important;
+    // border-radius: 20px;
+    // overflow: hidden;
+    // text-align: center;
+
+    &tbody tr:last-child td,
+    &tbody tr:last-child th {
+        border-bottom: none;
+    }
+    
+}
+// .dataLabel {
+//     text-align: right;
+//     font-size: 1.125rem;
+//     font-weight: bold;
+//     line-height: 2.1875rem;
+
+//     @media (max-width:768px) {
+//         line-height: normal;
+//         margin-bottom: 0.25rem;
+//         text-align: left;
+//     }
+// }

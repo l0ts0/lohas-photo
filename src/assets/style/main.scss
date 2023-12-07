@@ -1,0 +1,204 @@
+@import "../../../node_modules/bootstrap/scss/mixins/banner";
+@include bsBanner("");
+
+
+@import "../../../node_modules/bootstrap/scss/functions";
+
+// 客製化區域
+$theme-colors: (
+  "white" : #ffffff,
+  "black" : #000000,
+  "deep-gray" : #525252,
+  "gray" : #737373,
+  "light-gray1": #aaaaaa,
+  "light-gray" : #e2e2e2,
+
+  "main-color" : #9687FE,
+  "deep-main-color" : #6d54ff,
+  "deeper-main-color" : #4d30f3,
+
+  "sp-color" : #FFCE65,
+  "deep-sp-color" : #ffae00,
+
+  "hover-color": #fdf4cd,
+
+  "background-color": #f5f5f5,
+
+  // "hover-main-color": #dfeffd,
+  // "light-main-color": #5380CB,
+  // "main-color"      : #004f94,
+  // "deep-main-color" : #003869,
+
+  // "background": #f7f8fc,
+
+  "white-red"  : #f9eaef,
+  "lighter-red": #ffe4e2,
+  "red"        : #d9333f,
+  "deep-red"   : #c63945,
+  "light-red"  : #e60033,
+
+  "lighter-gray-blue" : #cbdeff,
+  "light-gray-blue" : #84a2d6,
+  "gray-blue" : #667eea,
+  "deep-gray-blue" : #254680,
+
+  "deep-yellow" : #f59700,
+  "dark-yellow" : #F5A930,
+  "yellow" : #FFC862,
+
+  "lighter-orange": #fff4c4,
+  "light-orange" : #f0972d,
+  "orange" : #f37500,
+
+  "peech-pink" : #f7487c,
+  "deep-peech-pink" : #d40c48,
+
+
+  "lighter-green": #e3ebbe,
+  "light-green"  : #a7c957,
+  // "green"        : #69821b,
+  // "bright-green" : #00a960,
+  "deep-green"   : #396a72,
+  // "matcha"       : #79BD79,
+
+  "green": #43bc75,
+
+  "lighter-blue-green" : #7BB4C4,
+  "light-blue-green" : #5bc0de,
+  "blue-green" : #0c7f91,
+
+  "lighter-blue" : #c6e7f5,
+  "light-blue" : #0097e2,
+  "blue" : #007bbb,
+  "deep-blue" : #0071ad,
+
+  "lighter-purple" : #e9def5,
+  "light-purple" : #875aa7,
+  "purple" : #65318e,
+  "deep-purple" : #572d8d,
+  "red-purple" : #af2c86,
+
+  // "light-peach": #FFC3AD,
+  // "peach"      : #FB748A,
+  // "deep-peach" : #BC5F6A,
+
+  "pink": #F799AD,
+);
+
+* {
+  font-family: '微軟正黑體';
+}
+
+body {
+  font-family: '微軟正黑體';
+  overflow-x: clip;
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    // display: grid;
+    // grid-template-rows: 1fr auto;
+    min-height: 100vh;
+  }
+}
+
+
+.material-icons-outlined {
+  user-select: none;
+}
+
+* {
+  letter-spacing: 0.1rem !important;
+}
+
+// TEMP
+.test {
+  border: 2px red solid;
+
+  &.green {
+    border: 2px green solid;
+  }
+}
+
+
+$enable-cssgrid: true;
+$input-btn-focus-box-shadow: unset;
+
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
+
+:root {
+
+  @each $color,
+  $value in $theme-colors {
+    --#{$prefix}#{$color}-50: #{tint-color($value, 90%)};
+    --#{$prefix}#{$color}-100: #{tint-color($value, 80%)};
+    --#{$prefix}#{$color}-200: #{tint-color($value, 60%)};
+    --#{$prefix}#{$color}-300: #{tint-color($value, 40%)};
+    --#{$prefix}#{$color}-400: #{tint-color($value, 20%)};
+    --#{$prefix}#{$color}-500: #{$value};
+    --#{$prefix}#{$color}-600: #{shade-color($value, 20%)};
+    --#{$prefix}#{$color}-700: #{shade-color($value, 40%)};
+    --#{$prefix}#{$color}-800: #{shade-color($value, 60%)};
+    --#{$prefix}#{$color}-900: #{shade-color($value, 80%)};
+  }
+}
+
+@each $color,
+$value in $theme-colors {
+  @for $i from 1 through 9 {
+    .bg-#{$color}-#{$i * 100} {
+      background-color: var(--#{$prefix}#{$color}-#{$i * 100});
+    }
+
+    .text-#{$color}-#{$i * 100} {
+      color: var(--#{$prefix}#{$color}-#{$i * 100});
+    }
+  }
+}
+
+// Layout & components
+@import "../../../node_modules/bootstrap/scss/root";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
+@import "../../../node_modules/bootstrap/scss/images";
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/tables";
+@import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/buttons";
+
+
+// @import "./quote";
+@import "../../../node_modules/bootstrap/scss/transitions";
+@import "../../../node_modules/bootstrap/scss/dropdown";
+@import "../../../node_modules/bootstrap/scss/button-group";
+@import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/navbar";
+@import "../../../node_modules/bootstrap/scss/card";
+@import "../../../node_modules/bootstrap/scss/accordion";
+@import "../../../node_modules/bootstrap/scss/breadcrumb";
+@import "../../../node_modules/bootstrap/scss/pagination";
+@import "../../../node_modules/bootstrap/scss/badge";
+@import "../../../node_modules/bootstrap/scss/alert";
+@import "../../../node_modules/bootstrap/scss/progress";
+@import "../../../node_modules/bootstrap/scss/list-group";
+@import "../../../node_modules/bootstrap/scss/close";
+@import "../../../node_modules/bootstrap/scss/toasts";
+@import "../../../node_modules/bootstrap/scss/modal";
+@import "../../../node_modules/bootstrap/scss/tooltip";
+@import "../../../node_modules/bootstrap/scss/popover";
+@import "../../../node_modules/bootstrap/scss/carousel";
+@import "../../../node_modules/bootstrap/scss/spinners";
+@import "../../../node_modules/bootstrap/scss/offcanvas";
+@import "../../../node_modules/bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../../node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "../../../node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
